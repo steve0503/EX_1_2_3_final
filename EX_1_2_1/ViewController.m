@@ -144,7 +144,7 @@
     
     NSIndexPath *indexPath = [self.table indexPathForCell:sender];
     
-    Product *selectedProduct = [[Catalog defaultCatalog] productAt:indexPath.row];
+    Product *selectedProduct = [[Catalog defaultCatalog] productAt:(int)indexPath.row];
     
     detailVC.productCode = selectedProduct.code;
     
