@@ -31,6 +31,7 @@
 		04C871FD1882A16500D84793 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C871FC1882A16500D84793 /* Cart.m */; };
 		04C872061882AB6D00D84793 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C872051882AB6D00D84793 /* CartItem.m */; };
 		04C872161882EE3700D84793 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C872151882EE3700D84793 /* CartCell.m */; };
+		04C9A8D21885C2A7009070DA /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C9A8D11885C2A7009070DA /* ProductDetailViewController.m */; };
 		04CE52791885AC2900F4A2D5 /* add_to_cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE52781885AC2900F4A2D5 /* add_to_cart.png */; };
 		04CE52841885B24B00F4A2D5 /* minus_blue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04CE52821885B24B00F4A2D5 /* minus_blue.jpeg */; };
 		04CE52851885B24B00F4A2D5 /* plus_blue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04CE52831885B24B00F4A2D5 /* plus_blue.jpeg */; };
@@ -85,6 +86,8 @@
 		04C872101882C56300D84793 /* CartDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartDelegate.h; sourceTree = "<group>"; };
 		04C872141882EE3700D84793 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCell.h; sourceTree = "<group>"; };
 		04C872151882EE3700D84793 /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCell.m; sourceTree = "<group>"; };
+		04C9A8D01885C2A7009070DA /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		04C9A8D11885C2A7009070DA /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
 		04CE52781885AC2900F4A2D5 /* add_to_cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_to_cart.png; sourceTree = "<group>"; };
 		04CE52821885B24B00F4A2D5 /* minus_blue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = minus_blue.jpeg; sourceTree = "<group>"; };
 		04CE52831885B24B00F4A2D5 /* plus_blue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plus_blue.jpeg; sourceTree = "<group>"; };
@@ -150,26 +153,17 @@
 		00A9B625187E5B93005B520C /* EX_1_2_1 */ = {
 			isa = PBXGroup;
 			children = (
-				00A9B656187E5BD3005B520C /* Product.m */,
-				00A9B657187E5BD3005B520C /* ProductCell.h */,
-				00A9B658187E5BD3005B520C /* ProductCell.m */,
-				00A9B654187E5BB3005B520C /* Product.h */,
+				04C9A8CF1885BF61009070DA /* product */,
+				04C9A8CE1885BF54009070DA /* cart */,
 				00A9B62E187E5B93005B520C /* AppDelegate.h */,
 				00A9B62F187E5B93005B520C /* AppDelegate.m */,
 				00A9B631187E5B93005B520C /* Main.storyboard */,
+				04C9A8D01885C2A7009070DA /* ProductDetailViewController.h */,
+				04C9A8D11885C2A7009070DA /* ProductDetailViewController.m */,
 				00A9B634187E5B93005B520C /* ViewController.h */,
 				00A9B635187E5B93005B520C /* ViewController.m */,
 				00A9B637187E5B93005B520C /* Images.xcassets */,
 				00A9B626187E5B93005B520C /* Supporting Files */,
-				00B30EED187E784800379CFD /* Catalog.h */,
-				00B30EEE187E784800379CFD /* Catalog.m */,
-				04C871FB1882A16500D84793 /* Cart.h */,
-				04C871FC1882A16500D84793 /* Cart.m */,
-				04C872041882AB6D00D84793 /* CartItem.h */,
-				04C872051882AB6D00D84793 /* CartItem.m */,
-				04C872101882C56300D84793 /* CartDelegate.h */,
-				04C872141882EE3700D84793 /* CartCell.h */,
-				04C872151882EE3700D84793 /* CartCell.m */,
 			);
 			path = EX_1_2_1;
 			sourceTree = "<group>";
@@ -217,6 +211,33 @@
 				00B30EE6187E77BE00379CFD /* volleyball.jpeg */,
 			);
 			name = Res;
+			sourceTree = "<group>";
+		};
+		04C9A8CE1885BF54009070DA /* cart */ = {
+			isa = PBXGroup;
+			children = (
+				04C871FB1882A16500D84793 /* Cart.h */,
+				04C871FC1882A16500D84793 /* Cart.m */,
+				04C872041882AB6D00D84793 /* CartItem.h */,
+				04C872051882AB6D00D84793 /* CartItem.m */,
+				04C872101882C56300D84793 /* CartDelegate.h */,
+				04C872141882EE3700D84793 /* CartCell.h */,
+				04C872151882EE3700D84793 /* CartCell.m */,
+			);
+			name = cart;
+			sourceTree = "<group>";
+		};
+		04C9A8CF1885BF61009070DA /* product */ = {
+			isa = PBXGroup;
+			children = (
+				00A9B656187E5BD3005B520C /* Product.m */,
+				00A9B657187E5BD3005B520C /* ProductCell.h */,
+				00A9B658187E5BD3005B520C /* ProductCell.m */,
+				00B30EED187E784800379CFD /* Catalog.h */,
+				00B30EEE187E784800379CFD /* Catalog.m */,
+				00A9B654187E5BB3005B520C /* Product.h */,
+			);
+			name = product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C872161882EE3700D84793 /* CartCell.m in Sources */,
+				04C9A8D21885C2A7009070DA /* ProductDetailViewController.m in Sources */,
 				04C871FD1882A16500D84793 /* Cart.m in Sources */,
 				00A9B65A187E5BD3005B520C /* ProductCell.m in Sources */,
 				00A9B636187E5B93005B520C /* ViewController.m in Sources */,

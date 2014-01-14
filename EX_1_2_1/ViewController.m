@@ -12,6 +12,7 @@
 #import "Product.h"
 #import "Cart.h"
 #import "CartCell.h"
+#import  "ProductDetailViewController.h"
 
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, CartDelegate>
@@ -134,6 +135,20 @@
     {
         return @"Items in Cart";
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    
+    ProductDetailViewController *detailVC = segue.destinationViewController;
+    
+    NSIndexPath *indexPath = [self.table indexPathForCell:sender];
+    
+    Product *selectedProduct = [[Catalog defaultCatalog] productAt:indexPath.row];
+    
+    detailVC.productCode = selectedProduct.code;
+    
+    
 }
 
 - (void)viewDidLoad
