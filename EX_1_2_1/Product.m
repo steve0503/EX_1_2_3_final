@@ -10,14 +10,14 @@
 
 @implementation Product
 
-
-+(id)product:(NSString *)name price:(NSString *)price image:(NSString *)image{
++(id)product:(NSString *)name code:(NSString*)code price:(NSString *)price image:(NSString *)image{
     
     Product *item = [[Product alloc] init];
     
     item.name = name;
     item.price = price;
     item.imageName = image;
+    item.code = code;
     
     return item;
     
@@ -30,7 +30,14 @@
     
 }
 
-
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
 
 
 

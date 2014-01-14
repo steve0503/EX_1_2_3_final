@@ -36,11 +36,11 @@ static Catalog* _instance = nil;
     self = [super init];
     
     if (self) {
-        data = @[[Product product:@"BaseBall" price:@"100" image:@"baseball.jpeg"],
-                 [Product product:@"BasketBall" price:@"200" image:@"basketball.png"],
-                 [Product product:@"FootBall" price:@"250" image:@"football.jpeg"],
-                 [Product product:@"RugbyBall" price:@"300" image:@"rugbyball.jpeg"],
-                 [Product product:@"WillSon" price:@"999" image:@"volleyball.jpeg"]];
+        data = @[[Product product:@"BaseBall" code:@"baseball" price:@"100" image:@"baseball.jpeg"],
+                 [Product product:@"BasketBall" code:@"basketball" price:@"200" image:@"Basketball.png"],
+                 [Product product:@"FootBall" code:@"football" price:@"250" image:@"football.jpeg"],
+                 [Product product:@"RugbyBall" code:@"rugbyball" price:@"300" image:@"rugbyball.jpeg"],
+                 [Product product:@"WillSon" code:@"volleyball" price:@"999" image:@"volleyball.jpeg"]];
     }
     
     return self;
@@ -48,14 +48,12 @@ static Catalog* _instance = nil;
 
 -(id)productAt:(int)index{
     
-    
     return [data objectAtIndex:index];
-    
 }
 
 -(int)numberOfProducts{
     
-    return [data count];
+    return (int)[data count];
 }
 
 @end

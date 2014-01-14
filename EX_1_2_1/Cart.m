@@ -12,10 +12,51 @@
 
 @implementation Cart
 
+static Cart *_instance = nil;
 
-//Cart내  상품 수량을 늘린다.
++ (id)defaultCart
+{
+    if (nil == _instance) {
+        _instance = [[Cart alloc] init];
+    }
+    return _instance;
+}
 
--(void)incQuantity:(NSString *)productCode{
+- (id) init
+{
+    self = [super init];
+    if (self) {
+        self.items = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+
+
+//Adding product to Cart
+- (void)addProduct:(Product *)item
+{
+    CartItem *cartItem = [self cartItemWith:item.code];
+    
+   
+    if (cartItem == nil)
+    {
+        cartItem = [[CartItem alloc] init];
+        cartItem.product = item;
+        cartItem.quantity = 1;
+        [self.items addObject:cartItem];
+    }
+    else
+    {
+        [self incQuantity:item.code];
+    }
+}
+
+
+//Increase the number of the products in cart
+
+-(void)incQuantity:(NSString *)productCode
+{
     
     CartItem *item = [self cartItemWith:productCode];
     
@@ -24,34 +65,34 @@
 }
 
 
-//Cart 내 상품 수량을 줄인다.
+//Decrease the number of the products in cart
 
--(void)decQuantity:(NSString *)productCode{
+- (void)decQuantity:(NSString *)productCode
+    {
+        CartItem *item = [self cartItemWith:productCode];
+        item.quantity--;
     
-    CartItem *item = [self cartItemWith:productCode];
+        // Remove the item when the quantity is 0
     
-    item.quantity--;
-    
-    if (0 == item.quantity) {
-        
+    if (0 == item.quantity)
+    {
+        [self.items removeObject:item];
     }
-    
 }
 
 
-// 상품 코드로 카트 내 상품 찾기
+//Search for the product with product code
 
-
--(CartItem *)cartItemWith:(NSString *)productCode{
-    
-    for (CartItem *item in item) {
-        if ([item.product isEqualProduct:productCode]) {
+- (CartItem *)cartItemWith:(NSString *)productCode
+{
+    for (CartItem *item in self.items)
+    {
+        if([item.product isEqualProduct:productCode])
+        {
             return item;
         }
     }
-    
     return nil;
 }
-
 
 @end

@@ -13,6 +13,6 @@
 
 @property (weak, nonatomic) Product* product;
 
-@property (nonatomic) NSInteger quantity;
+@property (nonatomic) int quantity;
 
 @end

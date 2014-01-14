@@ -10,17 +10,10 @@
 
 @interface Product : NSObject
 
-@property (strong,nonatomic) NSString *name;
-
-@property (strong,nonatomic) NSString *price;
-
-@property (strong, nonatomic) NSString *imageName;
-
-@property NSString *code;
+@property (strong,nonatomic) NSString *name, *price, *imageName,*code;
 
 -(BOOL)isEqualProduct:(NSString *)productCode;
 
-
-+(id)product:(NSString *)name price:(NSString *)price image:(NSString *)image;
++(id)product:(NSString *)name code:(NSString*)code price:(NSString *)price image:(NSString *)image;
 
 @end

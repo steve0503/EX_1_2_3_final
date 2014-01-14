@@ -12,22 +12,20 @@
 
 @interface Cart : NSObject
 
+
+@property NSMutableArray *items;
+
 //Adding Product to Cart
-
-
 -(void)addProduct:(Product* )product;
 
 
 // Increase/Decrease the quantity of Product in Cart
 
-
 -(void)incQuantity:(NSString *)productCode;
-
-
 -(void)decQuantity:(NSString* )productCode;
 
-
+//Search for the product
 -(CartItem *)cartItemWith:(NSString *)productCode;
-
++ (id)defaultCart;
 
 @end
